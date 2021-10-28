@@ -11,5 +11,5 @@ from flask import Flask
 app = Flask(__name__)
 
 @app.route("/")
-def hello_world():
-    return "<p>Hello, World!<p><hr><p>This is Emelia's Flask Page!</p><hr>"
+def welcome():
+    return "<p>Hello, World!</p><hr><p>Welcome to Our Store!</p><hr><p>Here are our products</p><hr>"
