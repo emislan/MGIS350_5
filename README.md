@@ -25,11 +25,6 @@ Please submit this assignment using the myCourses Dropbox section.
 
 Please submit this assignment to Prof Perotti using the myCourses Dropbox
 
-
-
-
-
-
 Simplest tutorial:
 https://realpython.com/introduction-to-flask-part-1-setting-up-a-static-site/
 
