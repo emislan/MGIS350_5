@@ -1,7 +1,15 @@
 {% extends "layout.html" %}
 {% block body %}
 <div class='block1'>
+    <h1>Hello</h1>
+    {% for p in products %}
+    <a href='/detail/{{p.id}}'>a {{p.type}} called {{p.name}}</a><br>
+    {% endfor %}
 
-
-    
 </div>
+
+{% for mesg in get_flashed_messages() %}
+<h3>{{ mesg }}</h3>
+{% endfor %}
+
+{% endblock %}
