@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+{% block body %}
+<div class="block1">
+    <h1>All about {{mouthpiece.name}}</h1>
+<img src='/static/{{mouthpiece.pic}}' />
+<p>
+This {{mouthpiece.type}} is ${{mouthpiece.price}}
+</p>
+
+</div>
+
+{% endblock %}
