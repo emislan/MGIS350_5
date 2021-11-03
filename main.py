@@ -40,3 +40,25 @@ app = Flask(__name__)
 @app.route("/")
 def welcome():
     return "<p>Hello, World!</p><hr><p>Welcome to Our Store!</p><hr><p>Here are our products</p><hr>"
+
+@app.route("/listmouthpieces")
+def list():
+	mouthpieces = Mouthpieces.query.all()
+	return render_template("list.html",mouthpieces=mouthpieces)
+@app.route("/listcases")
+def list():
+	pets = PhoneCases.query.all()
+	return render_template("list.html",PhoneCases=PhoneCases)
+
+@app.route("/detail/<int:pickamouthpiece>")
+def detail(pickamouthpiece):
+	mouthpiece = Mouthpiece.query.get(pickamouthpiece)
+	return render_template("detail.html",mouthpiece=mouthpiece)
+
+@app.route("/detail/<int:pickacase>")
+def detail(pickacase):
+	case = case.query.get(pickacase)
+	return render_template("detail.html",case=case)
+
+if __name__ == "__main__":
+	app.run()
