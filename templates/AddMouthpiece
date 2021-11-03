@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% block body %}
+<h1>Add a Mouthpiece!</h1>
+<form action="" method="post" novalidate>
+	{{ form.hidden_tag() }}
+	<p>
+		{{ form.mpName.label }}<br>
+		{{ form.mpName(size=32) }}
+	</p>
+  <p>
+		{{ form.mpfacing.label }}<br>
+		{{ form.mpfacing(size=32) }}
+	</p>
+	<p>
+		{{ form.mpType.label }}<br>
+		{{ form.mpType(size=32) }}
+	</p>
+	<p>
+		{{ form.mpPrice.label }}<br>
+		{{ form.mpPrice(size=32) }}
+	</p>
+	<p>
+		{{ form.mpPicture.label }}<br>
+		{{ form.mpPicture(size=32) }}
+	</p>
+
+	<p>{{ form.submit() }}</p>
+</form>
+{% endblock %}
