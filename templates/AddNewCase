@@ -1,1 +1,25 @@
+{% extends "layout.html" %}
+{% block body %}
+<h1>Add a New Case!</h1>
+<form action="" method="post" novalidate>
+	{{ form.hidden_tag() }}
+	<p>
+		{{ form.CaseName.label }}<br>
+		{{ form.CaseName(size=32) }}
+	</p>
+	<p>
+		{{ form.CaseType.label }}<br>
+		{{ form.CaseType(size=32) }}
+	</p>
+	<p>
+		{{ form.CasePrice.label }}<br>
+		{{ form.CasePrice(size=32) }}
+	</p>
+	<p>
+		{{ form.CasePicture.label }}<br>
+		{{ form.CasePicture(size=32) }}
+	</p>
 
+	<p>{{ form.submit() }}</p>
+</form>
+{% endblock %}
