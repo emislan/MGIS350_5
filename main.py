@@ -4,7 +4,8 @@
 # Quickstart: https://flask.palletsprojects.com/en/2.0.x/quickstart/
 # To View: http://127.0.0.1:5000/
 #
-
+#Zachary's Notes
+# to establish the 2 classes and create a few examples of each class (similar to perotti's examplew in class)
 
 from flask import Flask, render_template,flash, redirect
 
