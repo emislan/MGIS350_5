@@ -43,7 +43,7 @@ def welcome():
 
 @app.route("/listmouthpieces")
 def list():
-	mouthpieces = Mouthpieces.query.all()
+	mouthpieces = mouthpiece.query.all()
 	return render_template("list.html",mouthpieces=mouthpieces)
 @app.route("/listcases")
 def list():
