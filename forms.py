@@ -4,6 +4,7 @@ from wtforms.validators import DataRequired
 
 class NewMouthpieceForm(FlaskForm):
     mpName = StringField('Mouthpiece name', validators=[DataRequired()])
+    mpFacing = StringField('Mouthpiece Facing', validators=[DataRequired()])
     mpType = StringField('Mouthpiece type', validators=[DataRequired()])
     mpPicture = StringField('Mouthpiece picture (URL or filename)')
     mpPrice = StringField('Mouthpiece Price')
