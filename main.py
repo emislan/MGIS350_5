@@ -66,7 +66,7 @@ def detail(pickamouthpiece):
 	mouthpiece = Mouthpiece.query.get(pickamouthpiece)
 	return render_template("detail.html",mouthpiece=mouthpiece)
 
-@app.route("/addpet",methods=['GET','POST'])
+@app.route("/addmouthpiece",methods=['GET','POST'])
 def addpet():
 	addform = NewMouthpieceForm()
 	if addform.validate_on_submit():
@@ -77,7 +77,7 @@ def addpet():
 		db.session.add(p)
 		db.session.commit()
 		return redirect('/')
-	return render_template("addpet.html",title='Add A Mouthpiece!',form=addform)
+	return render_template("addMouthpiece.html",title='Add A Mouthpiece!',form=addform)
 
 
 # IT ISNT LIKING HAVING 2 PRODUCTS (2 of each of the following types of code)
