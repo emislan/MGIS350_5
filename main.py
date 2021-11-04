@@ -7,12 +7,16 @@
 #Zachary's Notes
 # to establish the 2 classes and create a few examples of each class (similar to perotti's examplew in class)
 
+#create models.py -- create class def of mps
+
 from flask import Flask, render_template,flash, redirect
-
+from flask_sqlalchemy import SQLAlchemy
 from forms import NewCaseForm, NewMouthpieceForm
-
-
-class Mouthpiece:
+from config import Config
+from models import Mouthpiece
+from models import *
+#Irrelevant
+""" class Mouthpiece:
 	def __init__(self,id,name,type,price,pic):
 		self.id = id
 		self.name = name
@@ -26,9 +30,9 @@ class PhoneCase:
 		self.name = name
 		self.type = type
 		self.price = price
-		self.pic = pic
+		self.pic = pic """
 
-Mouthpiecelist = []
+""" Mouthpiecelist = []
 p = Mouthpiece(0,"Frank Kaspar ", "Bb Soprano",650,"fluffy.jpg")
 p2 = Mouthpiece(1,"Woodwind Company", "Bb Soprano", 120.00, "rover.jpg")
 p3 = Mouthpiece(2,"Block Meliphone", "Eb Soprano",500,"cod.jpg")
@@ -36,8 +40,14 @@ p3 = Mouthpiece(2,"Block Meliphone", "Eb Soprano",500,"cod.jpg")
 PhoneCaseList = []
 p = PhoneCase(0,"Frank Kaspar ", "Bb Soprano",650,"fluffy.jpg")
 p2 = PhoneCase(1,"Woodwind Company" , "Bb Soprano", 120.00, "rover.jpg")
-p3 = PhoneCase(2,"Block Meliphone", "Eb Soprano",500,"cod.jpg")
+p3 = PhoneCase(2,"Block Meliphone", "Eb Soprano",500,"cod.jpg") """
+
+# end of irrelevance
+
 app = Flask(__name__)
+app.config.from_object(Config)
+db = SQLAlchemy(app)
+
 
 @app.route("/")
 def welcome():
@@ -47,7 +57,7 @@ def welcome():
 
 @app.route("/listmouthpieces")
 def mplist():
-	mouthpieces = mouthpiece.query.all()
+	mouthpieces = Mouthpiece.query.all()
 	return render_template("list.html",mouthpieces=mouthpieces)
 
 
