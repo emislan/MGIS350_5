@@ -66,6 +66,20 @@ def detail(pickamouthpiece):
 	mouthpiece = Mouthpiece.query.get(pickamouthpiece)
 	return render_template("detail.html",mouthpiece=mouthpiece)
 
+@app.route("/addpet",methods=['GET','POST'])
+def addpet():
+	addform = NewMouthpieceForm()
+	if addform.validate_on_submit():
+		flash('Adding pet {}, which is a...{}'.format(
+			addform.mpName.data, addform.mpType.data))
+		#nextpetid = len(petlist)
+		p =Mouthpiece(petname=addform.mpName.data,pettype=addform.mpType.data,petprice=addform.mpPrice.data,petpic=addform.mpPicture.data)
+		db.session.add(p)
+		db.session.commit()
+		return redirect('/')
+	return render_template("addpet.html",title='Add A Mouthpiece!',form=addform)
+
+
 # IT ISNT LIKING HAVING 2 PRODUCTS (2 of each of the following types of code)
 
 # @app.route("/listcases")
