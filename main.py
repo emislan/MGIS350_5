@@ -13,8 +13,7 @@ from flask import Flask, render_template,flash, redirect
 from flask_sqlalchemy import SQLAlchemy
 from forms import NewCaseForm, NewMouthpieceForm
 from config import Config
-from models import Mouthpiece
-from models import *
+
 #Irrelevant
 """ class Mouthpiece:
 	def __init__(self,id,name,type,price,pic):
@@ -48,6 +47,7 @@ app = Flask(__name__)
 app.config.from_object(Config)
 db = SQLAlchemy(app)
 
+from models import *
 
 @app.route("/")
 def welcome():
@@ -73,7 +73,7 @@ def addpet():
 		flash('Adding pet {}, which is a...{}'.format(
 			addform.mpName.data, addform.mpType.data))
 		#nextpetid = len(petlist)
-		p =Mouthpiece(petname=addform.mpName.data,pettype=addform.mpType.data,petprice=addform.mpPrice.data,petpic=addform.mpPicture.data)
+		p =Mouthpiece(mpName=addform.mpName.data,mpType=addform.mpType.data,mpPrice=addform.mpPrice.data,mppic=addform.mpPicture.data)
 		db.session.add(p)
 		db.session.commit()
 		return redirect('/')
