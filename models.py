@@ -9,6 +9,6 @@ class Mouthpiece(db.Model):
 	mppic = db.Column(db.String(256),index=True)
 	
 	def __repr__(self):
-		return '<Pet named {}>'.format(self.petname)
+		return '<Pet named {}>'.format(self.mpname)
 
 
