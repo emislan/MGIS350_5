@@ -1,9 +1,9 @@
 {% extends "layout.html" %}
 {% block body %}
 <div class='block1'>
-    <h1>Hello</h1>
-    {% for p in products %}
-    <a href='/detail/{{p.id}}'>a {{p.type}} called {{p.name}}</a><br>
+    <h1>Our available Inventory</h1>
+    {% for p in Mouthpiece %}
+    <a href='/detail/{{p.id}}'>a {{p.mpName}} for {{p.mpPrice}}</a><br>
     {% endfor %}
 
 </div>
