@@ -4,12 +4,11 @@ from wtforms.validators import DataRequired
 
 class NewMouthpieceForm(FlaskForm):
     mpName = StringField('Mouthpiece name', validators=[DataRequired()])
-    mpFacing = StringField('Mouthpiece Facing', validators=[DataRequired()])
     mpType = StringField('Mouthpiece type', validators=[DataRequired()])
     mpPicture = StringField('Mouthpiece picture (URL or filename)')
     mpPrice = StringField('Mouthpiece Price')
     remember_me = BooleanField('Remember Me')
-    submit = SubmitField('Sign In')
+    submit = SubmitField('Submit')
 
 class NewCaseForm(FlaskForm):
     caseName = StringField('Phone Case name', validators=[DataRequired()])
