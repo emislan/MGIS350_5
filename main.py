@@ -6,8 +6,8 @@
 #
 #Zachary's Notes
 # to establish the 2 classes and create a few examples of each class (similar to perotti's examplew in class)
-
 #create models.py -- create class def of mps
+#Peiyang's Notes: We need some images?
 
 from flask import Flask, render_template,flash, redirect
 from flask_sqlalchemy import SQLAlchemy
