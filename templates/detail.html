@@ -1,11 +1,15 @@
 {% extends "layout.html" %}
 {% block body %}
 <div class="block1">
-    <h1>All about {{mouthpiece.name}}</h1>
-<img src='/static/{{mouthpiece.pic}}' />
-<p>
-This {{mouthpiece.type}} is ${{mouthpiece.price}}
-</p>
+    <h1>All about {{mouthpiece.mpName}}</h1>
+	{% if 'http' in mouthpiece.mpPic %}
+	<img src="{{mouthpiece.mpPic}}" />
+    {% else %}
+    <img src='/static/{{mouthpiece.mpPic}}' />
+    {% endif %}
+    <p>
+    This {{mouthpiece.type}} is ${{mouthpiece.price}}
+    </p>
 
 </div>
 
