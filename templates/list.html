@@ -2,7 +2,8 @@
 {% block body %}
 <div class='block1'>
     <h1>Our available Inventory</h1>
-    {% for p in Mouthpiece %}
+
+    {% for p in mouthpieces %}
     <a href='/detail/{{p.id}}'>a {{p.mpName}} for {{p.mpPrice}}</a><br>
     {% endfor %}
 
