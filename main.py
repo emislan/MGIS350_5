@@ -49,13 +49,10 @@ db = SQLAlchemy(app)
 
 from models import *
 
-@app.route("/")
-def welcome():
-    return "<p>Hello, World!</p><hr><p>Welcome to Our Store!</p><hr><p>Here are our products</p><hr>"
+
 
 # mouthpiece not defined -- issue
-
-@app.route("/listmouthpieces")
+@app.route("/")
 def mplist():
 	mouthpieces = Mouthpiece.query.all()
 	return render_template("list.html",mouthpieces=mouthpieces)
@@ -76,7 +73,7 @@ def addMouthpiece():
 		p =Mouthpiece(mpName=addform.mpName.data,mpType=addform.mpType.data,mpPrice=addform.mpPrice.data,mpPic=addform.mpPicture.data)
 		db.session.add(p)
 		db.session.commit()
-		return redirect('/listmouthpieces')
+		return redirect('/')
 	return render_template("addMouthpiece.html",title='Add A Mouthpiece!',form=addform)
 
 
