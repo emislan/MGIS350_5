@@ -7,10 +7,6 @@
 		{{ form.mpName.label }}<br>
 		{{ form.mpName(size=32) }}
 	</p>
-  <p>
-		{{ form.mpfacing.label }}<br>
-		{{ form.mpfacing(size=32) }}
-	</p>
 	<p>
 		{{ form.mpType.label }}<br>
 		{{ form.mpType(size=32) }}
