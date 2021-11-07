@@ -6,8 +6,8 @@
 #
 #Zachary's Notes
 # to establish the 2 classes and create a few examples of each class (similar to perotti's examplew in class)
+
 #create models.py -- create class def of mps
-#Peiyang's Notes: We need some images?
 
 from flask import Flask, render_template,flash, redirect
 from flask_sqlalchemy import SQLAlchemy
@@ -67,16 +67,16 @@ def detail(pickamouthpiece):
 	return render_template("detail.html",mouthpiece=mouthpiece)
 
 @app.route("/addmouthpiece",methods=['GET','POST'])
-def addpet():
+def addMouthpiece():
 	addform = NewMouthpieceForm()
 	if addform.validate_on_submit():
-		flash('Adding pet {}, which is a...{}'.format(
+		flash('Adding mouthpiece {}, which is a...{}'.format(
 			addform.mpName.data, addform.mpType.data))
 		#nextpetid = len(petlist)
-		p =Mouthpiece(mpName=addform.mpName.data,mpType=addform.mpType.data,mpPrice=addform.mpPrice.data,mppic=addform.mpPicture.data)
+		p =Mouthpiece(mpName=addform.mpName.data,mpType=addform.mpType.data,mpPrice=addform.mpPrice.data,mpPic=addform.mpPicture.data)
 		db.session.add(p)
 		db.session.commit()
-		return redirect('/')
+		return redirect('/listmouthpieces')
 	return render_template("addMouthpiece.html",title='Add A Mouthpiece!',form=addform)
 
 
